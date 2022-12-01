@@ -13,6 +13,14 @@ func toInt(s string) int {
 	return n
 }
 
+func sumSlice(s []int) int {
+	var vv int
+	for _, v := range s {
+		vv += v
+	}
+	return vv
+}
+
 func main() {
 	f, _ := os.Open("input")
 	defer f.Close()
@@ -34,5 +42,7 @@ func main() {
 		return values[i] > values[j]
 	})
 
-	fmt.Println(values[0])
+	fmt.Println("Part 1", values[0])
+
+	fmt.Println("Part 2", sumSlice(values[:3]))
 }
